@@ -1,21 +1,85 @@
 aid: kumoai
 name: Kumo.AI
-description: 'Kumo.AI is a company surfaced as a portfolio company of sv-angel and added to the API Evangelist
-  network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment pipeline.'
+description: 'Kumo.AI builds predictive AI for relational data. Its flagship model,
+  KumoRFM, is a pre-trained Relational Foundation Model that generates training-free
+  predictions over multi-table data by interpreting a data warehouse as a temporal
+  heterogeneous graph, queried through a SQL-like Predictive Query Language (PQL).
+  Kumo exposes this through a Python SDK (kumoai), a REST API for automating retraining
+  and batch predictions, an open-source Model Context Protocol server (kumo-rfm-mcp)
+  for agentic workflows, and a published Agent Skills catalog. It ships as SaaS, VPC/BYOC,
+  a Snowflake Native Application, and a Databricks Native Application. Kumo product
+  documentation is now hosted by NVIDIA under Structured Data and Graph Models.'
 url: https://raw.githubusercontent.com/api-evangelist/kumoai/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/83320328?v=4
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - sv-angel
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Ai
-apis: []
+- Machine Learning
+- Predictive Analytics
+- Graph Neural Networks
+- Foundation Models
+- Data Warehouse
+- Model Context Protocol
+- Agents
+- Relational Data
+apis:
+- aid: kumoai-rest-api
+  name: Kumo REST API
+  description: Automate and schedule predictive query training and batch predictions.
+    Retrain a predictive query (re-ingesting data from the source), trigger recurring
+    batch predictions, monitor job status and evaluation metrics, and cancel in-progress
+    jobs. Authenticates with a tenant-scoped X-API-Key header.
+  humanURL: https://docs.nvidia.com/sdgm/rest-api
+  baseURL: https://<customer_id>.kumoai.cloud/api
+  x-baseURL-note: The public API URL is tenant-scoped; SPCS deployments use https://<kumo_spcs_deployment_url>/api.
+  tags:
+  - Machine Learning
+  - Batch Prediction
+  - Jobs
+  properties:
+  - type: Documentation
+    url: https://docs.nvidia.com/sdgm/rest-api
+  - type: Authentication
+    url: ../authentication/kumoai-authentication.yml
+- aid: kumoai-rfm-mcp
+  name: KumoRFM MCP Server
+  description: Open-source Model Context Protocol server that empowers AI assistants
+    with KumoRFM. Builds, manages, and visualizes relational graphs directly from CSV
+    or Parquet files, converts natural language into PQL queries, and runs training-free
+    predictions, evaluations, and explanations. Runs over stdio or streamable-http
+    and is distributed on PyPI and as an MCPB bundle.
+  humanURL: https://github.com/kumo-ai/kumo-rfm-mcp
+  baseURL: https://kumorfm.ai
+  tags:
+  - Model Context Protocol
+  - Agents
+  - Predictions
+  properties:
+  - type: SourceCode
+    url: https://github.com/kumo-ai/kumo-rfm-mcp
+  - type: MCPServer
+    url: ../mcp/kumoai-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +88,60 @@ maintainers:
 common:
 - type: Website
   url: https://kumo.ai
+- type: DeveloperPortal
+  url: https://docs.nvidia.com/sdgm/rfm/overview
+- type: Documentation
+  url: https://docs.nvidia.com/sdgm/rfm/introduction
+- type: APIReference
+  url: https://docs.nvidia.com/sdgm/rest-api
+- type: GettingStarted
+  url: https://docs.nvidia.com/sdgm/quick-start/rfm
+- type: Support
+  url: https://join.slack.com/t/kumoaibuilders/shared_invite/zt-2z9uih3lf-fPM1z2ACZg~oS3ObmiQLKQ
+- type: GitHubOrganization
+  url: https://github.com/kumo-ai
+- type: SignUp
+  url: https://kumorfm.ai
+- type: PrivacyPolicy
+  url: https://docs.nvidia.com/sdgm/privacy-policy
+- type: Security
+  url: https://docs.nvidia.com/sdgm/security-and-governance
+- type: Compliance
+  url: https://docs.nvidia.com/sdgm/security-and-governance
+- type: TrustCenter
+  url: security/kumoai-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/kumoai-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/kumoai-domain-security.yml
+- type: Authentication
+  url: authentication/kumoai-authentication.yml
+- type: Conventions
+  url: conventions/kumoai-conventions.yml
+- type: ErrorCatalog
+  url: errors/kumoai-problem-types.yml
+- type: RateLimits
+  url: rate-limits/kumoai-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/kumoai-lifecycle.yml
+- type: ChangeLog
+  url: changelog/kumoai-changelog.yml
+- type: Packages
+  url: packages/kumoai-packages.yml
+- type: SDKs
+  url: packages/kumoai-packages.yml
+- type: MCPServer
+  url: mcp/kumoai-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/kumoai-llms.txt
+- type: WellKnown
+  url: well-known/kumoai-well-known.yml
+- type: Conformance
+  url: conformance/kumoai-conformance.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
