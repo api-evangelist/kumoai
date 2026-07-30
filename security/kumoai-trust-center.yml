@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+probe: true
+source: https://docs.nvidia.com/sdgm/security-and-governance
+url: https://security.kumo.ai/
+url_status: 'unreachable at probe time (2026-07-19): security.kumo.ai does not currently
+  resolve. The URL is the one Kumo publishes in its SaaS Security White Paper as the
+  location of its SOC 2 report.'
+certifications:
+- SOC 2
+frameworks_referenced:
+- NIST 800-53
+- ISO 27000 series
+contact: security@kumo.ai
+detail:
+  soc2: Kumo's SOC 2 report includes a description of its service organization's system
+    and a test of the design of the relevant controls as they relate to security,
+    availability, confidentiality, processing integrity, and privacy.
+  posture: Kumo states it relies on industry-standard information security best practices
+    and compliance frameworks (NIST 800-53, ISO 27000 series) to support its security
+    initiatives, and runs on public cloud provider infrastructure whose own certifications
+    and audit reports are referenced.
+related_docs:
+- title: Kumo AI SaaS Security White Paper
+  url: https://docs.nvidia.com/sdgm/security-and-governance
+- title: Privacy Policy
+  url: https://docs.nvidia.com/sdgm/privacy-policy
+- title: Consumer Privacy
+  url: https://docs.nvidia.com/sdgm/consumer-privacy
+- title: Data Processing Addendum
+  url: https://docs.nvidia.com/sdgm/data-processing-addendum
+- title: Model Risk Management
+  url: https://docs.nvidia.com/sdgm/model-risk-management
+evidence:
+- source: https://docs.nvidia.com/sdgm/security-and-governance
+  keywords:
+  - compliance certifications
+  - SOC 2
+  - NIST 800-53
+  - ISO 27000
+  - security@kumo.ai

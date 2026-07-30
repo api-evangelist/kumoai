@@ -1,0 +1,44 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/kumoai/ , https://github.com/kumo-ai/kumo-rfm-mcp/releases
+  , https://docs.nvidia.com/sdgm/llms.txt
+versioning:
+  scheme: semver-package
+  note: There is no version segment in the Kumo REST API path. Versioning is carried
+    by the client packages — the `kumoai` Python SDK (stable 2.x, with nightly 3.0.0.devYYYYMMDDHHMM
+    builds published daily) and the `kumo-rfm-mcp` MCP server (0.x).
+  current:
+    kumoai: 2.22.0
+    kumo-rfm-mcp: 0.3.1
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No published deprecation policy and no evidence of RFC 8594 Sunset/Deprecation
+    header support. Some PQL capabilities are documented as "fine-tuned only / blocked
+    in RFM mode" (see errors/kumoai-problem-types.yml category D), which is a capability
+    restriction rather than a deprecation contract.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  note: 'Probed status.kumo.ai — DNS does not resolve. No public status page found.'
+support:
+  email: security@kumo.ai (security matters)
+  github_issues: https://github.com/kumo-ai/kumo-rfm/issues
+  slack: https://join.slack.com/t/kumoaibuilders/shared_invite/zt-2z9uih3lf-fPM1z2ACZg~oS3ObmiQLKQ
+deployment_modes:
+- id: saas
+  docs: https://docs.nvidia.com/sdgm/saas
+- id: virtual-private-cloud
+  docs: https://docs.nvidia.com/sdgm/virtual-private-cloud
+- id: snowflake-native-application
+  docs: https://docs.nvidia.com/sdgm/spcs/snowflake-native-application
+- id: databricks-native-application
+  docs: https://docs.nvidia.com/sdgm/databricks-native-application
+corporate:
+  note: The Kumo product documentation now lives on NVIDIA's documentation host under
+    "Structured Data and Graph Models" (https://docs.nvidia.com/sdgm/), and https://kumo.ai/docs
+    redirects there. As of this probe https://kumo.ai/ itself serves a default nginx
+    page rather than a marketing site.
+  observed: '2026-07-19'

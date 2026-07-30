@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+source: live HTTP probes of the Kumo web hosts
+summary: 'No .well-known discovery documents are published. kumo.ai returns 404 for
+  every probed path; kumorfm.ai is a single-page app whose server returns HTTP 200
+  with a text/html content-type for every path (a soft 404), so none of those responses
+  are real discovery documents.'
+hosts:
+- host: https://kumo.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://kumorfm.ai
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /llms.txt
+    status: 200
+    content_type: text/html
+    soft_404: true
+related:
+- note: An llms.txt IS published on the Kumo documentation host and was harvested verbatim.
+  url: https://docs.nvidia.com/sdgm/llms.txt
+  file: ../llms/kumoai-llms.txt

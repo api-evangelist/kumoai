@@ -1,0 +1,286 @@
+# Structured Data and Graph Models
+
+## Instructions for AI Agents
+
+- For clean Markdown of any page, append `.md` to the page URL
+- For section-specific indexes, append `/llms.txt` to any section URL
+- For AI client integration (Claude Code, Cursor, etc.), connect to the MCP server at https://docs.nvidia.com/sdgm/_mcp/server
+
+## Docs
+
+- [Overview](https://docs.nvidia.com/sdgm/rfm/overview.md): Introduction to KumoRFM — the relational foundation model for predictive AI on relational data
+- [Quickstart: KumoRFM](https://docs.nvidia.com/sdgm/quick-start/rfm.md)
+- [Quickstart: Fine-Tune](https://docs.nvidia.com/sdgm/quick-start/fine-tune.md)
+- [Quickstart: Kumo Coding Agent](https://docs.nvidia.com/sdgm/rfm/coding-agent-quick-start.md): Use coding agents like Claude Code and Codex to iterate on KumoRFM predictions
+- [Introduction](https://docs.nvidia.com/sdgm/rfm/introduction.md): Get started with KumoRFM — instant predictions on relational data without model training
+- [Setup](https://docs.nvidia.com/sdgm/rfm/sdk-getting-started.md): End-to-end RFM SDK walkthrough: authentication, data sources, and your first predictions
+- [Jupyter in VS Code](https://docs.nvidia.com/sdgm/rfm/setup/jupyter-vscode.md): Run Kumo SDK notebooks with Jupyter inside VS Code
+- [Jupyter in PyCharm](https://docs.nvidia.com/sdgm/rfm/setup/jupyter-pycharm.md): Run Kumo SDK notebooks with Jupyter inside PyCharm
+- [Snowflake Notebooks](https://docs.nvidia.com/sdgm/rfm/setup/snowflake-notebooks.md): Run Kumo SDK in Snowflake Notebooks
+- [VS Code + Kumo Agent](https://docs.nvidia.com/sdgm/rfm/setup/vscode-kumo-agent.md): Set up VS Code with the Kumo coding agent
+- [Claude Code](https://docs.nvidia.com/sdgm/rfm/setup/claude-code.md): Use Claude Code with the Kumo RFM SDK
+- [Cursor](https://docs.nvidia.com/sdgm/rfm/setup/cursor.md): Use Cursor with the Kumo RFM SDK
+- [Codex](https://docs.nvidia.com/sdgm/rfm/setup/codex.md): Use Codex with the Kumo RFM SDK
+- [Setup Graph](https://docs.nvidia.com/sdgm/rfm/graph-creation.md)
+- [Data Requirements](https://docs.nvidia.com/sdgm/rfm/data-requirements.md): Data types, semantic types, and requirements for KumoRFM
+- [Data Types](https://docs.nvidia.com/sdgm/rfm/data-types.md): Column data types and semantic types supported by KumoRFM
+- [Table Definitions](https://docs.nvidia.com/sdgm/rfm/table-definitions.md): Define tables for KumoRFM with LocalTable
+- [Graph Definitions](https://docs.nvidia.com/sdgm/rfm/graph-definitions.md): Define graphs for KumoRFM
+- [Best Practices](https://docs.nvidia.com/sdgm/rfm/best-practices.md): Best practices for data preparation with KumoRFM
+- [Snowflake Connector](https://docs.nvidia.com/sdgm/rfm/connectors/snowflake.md): Connect KumoRFM to data stored in Snowflake
+- [SQLite Connector](https://docs.nvidia.com/sdgm/rfm/connectors/sqlite.md): Connect KumoRFM to data stored in SQLite
+- [Databricks Connector](https://docs.nvidia.com/sdgm/rfm/connectors/databricks.md): Connect KumoRFM to data stored in a Databricks SQL warehouse
+- [DuckDB Connector](https://docs.nvidia.com/sdgm/rfm/connectors/duckdb.md): Connect KumoRFM to data stored in a DuckDB database
+- [Make Predictions](https://docs.nvidia.com/sdgm/rfm/make-predictions.md): Guide to make predictions using RFM
+- [Querying RFM](https://docs.nvidia.com/sdgm/rfm/querying-rfm.md): Deep-dive into PQL: Target×Entity×Horizon framework, entity specification, and example queries
+- [Prediction Types](https://docs.nvidia.com/sdgm/rfm/prediction-types.md): Task taxonomy: regression, classification, forecasting, ranking, and static tasks
+- [Filters and Operators](https://docs.nvidia.com/sdgm/rfm/filters-and-operators.md): Use WHERE clauses, temporal filters, IN operators, and anchor time
+- [Writing Predictive Queries](https://docs.nvidia.com/sdgm/rfm/writing-predictive-queries.md): Workflow for writing effective predictive queries against KumoRFM
+- [Configuration](https://docs.nvidia.com/sdgm/rfm/configuration.md): Configure run modes, temporal behavior, inference behavior, retries, batch mode, and size limits for KumoRFM
+- [Forecasting](https://docs.nvidia.com/sdgm/rfm/forecasting.md): End-to-end technical reference for RFM multi-horizon forecasting with FORECAST N TIMEFRAMES
+- [Evaluation](https://docs.nvidia.com/sdgm/rfm/evaluation.md): Evaluate KumoRFM predictions with metrics and task tables
+- [Explainability](https://docs.nvidia.com/sdgm/rfm/understand-explanations.md): Guide to explainability in RFM
+- [Prediction Explainability](https://docs.nvidia.com/sdgm/rfm/prediction-explainability.md): Two-layer explainability: natural language summaries and structured feature importance
+- [How to improve model performance](https://docs.nvidia.com/sdgm/rfm/improve-model-performance.md)
+- [How to do batch prediction](https://docs.nvidia.com/sdgm/rfm/batch-prediction.md)
+- [RelBench](https://docs.nvidia.com/sdgm/rfm/examples/relbench.md): Benchmark KumoRFM against RelBench relational learning datasets
+- [SALT](https://docs.nvidia.com/sdgm/rfm/examples/salt.md): KumoRFM example: predicting SALT outcomes
+- [Agent: Sales Lead Scoring](https://docs.nvidia.com/sdgm/rfm/build-agent-from-kumorfm-mcp.md): Build an end-to-end Sales Lead Scoring Agent using KumoRFM MCP and OpenAI Agents
+- [Introduction](https://docs.nvidia.com/sdgm/fine-tuning/introduction.md): End-to-end fine-tuning walkthrough: connectors, tables, graphs, predictive queries, training
+- [Installation](https://docs.nvidia.com/sdgm/fine-tuning/installation.md): Install the kumoai Python SDK for fine-tuning workflows
+- [API Key Management](https://docs.nvidia.com/sdgm/fine-tuning/api-key-management.md): Provision and manage API keys for the Kumo SDK
+- [Snowflake SPCS Setup](https://docs.nvidia.com/sdgm/fine-tuning/snowflake-spcs-setup.md): Run the Kumo SDK inside Snowpark Container Services notebooks
+- [Groups, Projects, and RBAC](https://docs.nvidia.com/sdgm/fine-tuning/groups-and-projects.md): Scope Kumo SDK work to groups and projects in RBAC-enabled workspaces
+- [Connectors](https://docs.nvidia.com/sdgm/fine-tuning/connectors.md): Connect to data sources and inspect source tables with the Kumo SDK
+- [Connector Reference](https://docs.nvidia.com/sdgm/fine-tuning/connector-reference.md): Reference for Kumo SDK connector classes and table access patterns
+- [Tables](https://docs.nvidia.com/sdgm/fine-tuning/tables.md): Create and configure Kumo Tables from source data with metadata inference
+- [Graphs](https://docs.nvidia.com/sdgm/fine-tuning/graphs.md): Build a Kumo Graph by connecting tables through primary/foreign key relationships
+- [Predictive Queries](https://docs.nvidia.com/sdgm/fine-tuning/predictive-queries.md): Define machine learning problems using Kumo's Predictive Query Language (PQL)
+- [Compute Sessions](https://docs.nvidia.com/sdgm/fine-tuning/compute-sessions.md): Understand current Kumo SDK session behavior and shared-compute limitations
+- [Code Generation](https://docs.nvidia.com/sdgm/fine-tuning/code-generation.md): Generate reproducible Kumo SDK Python code from existing Kumo entities
+- [Training & Predictions](https://docs.nvidia.com/sdgm/fine-tuning/training.md): Train models and generate batch predictions with the Kumo SDK
+- [Artifact and Output Exports](https://docs.nvidia.com/sdgm/fine-tuning/artifact-exports.md): Configure prediction, training table, embedding, and model artifact exports with the Kumo SDK
+- [Online Serving](https://docs.nvidia.com/sdgm/fine-tuning/online-serving.md): End-to-end guide: train, export, and deploy your Kumo model for real-time inference
+- [Introduction](https://docs.nvidia.com/sdgm/platform-introduction.md): Get started with the KumoRFM Fine-Tuning Platform — train and deploy models through the web UI
+- [Data Connectors](https://docs.nvidia.com/sdgm/data-connectors.md)
+- [AWS S3](https://docs.nvidia.com/sdgm/aws-s3.md)
+- [AWS Glue Catalog](https://docs.nvidia.com/sdgm/aws-glue.md)
+- [Google Cloud BigQuery](https://docs.nvidia.com/sdgm/google-cloud-bigquery.md)
+- [Snowflake](https://docs.nvidia.com/sdgm/snowflake-connector.md): Kumo offers three ways to connect to your Snowflake data warehouse. Click the tab below to learn more. - Snowflake Direct Connector - Snowflake Secure Data Sharing - Snowflake Native App
+- [Databricks](https://docs.nvidia.com/sdgm/databricks-connector.md)
+- [Local Upload](https://docs.nvidia.com/sdgm/local-data-upload.md)
+- [Select Tables](https://docs.nvidia.com/sdgm/select-tables.md)
+- [Column Preprocessing](https://docs.nvidia.com/sdgm/column-preprocessing.md)
+- [Create Graph](https://docs.nvidia.com/sdgm/create-graph.md)
+- [Understanding Predictive Query](https://docs.nvidia.com/sdgm/predictive-query.md)
+- [Predictive Query Structure](https://docs.nvidia.com/sdgm/pquery-structure.md)
+- [Task Types](https://docs.nvidia.com/sdgm/task-types.md)
+- [Static vs. Temporal](https://docs.nvidia.com/sdgm/temporal-vs-static-pqueries.md)
+- [Training](https://docs.nvidia.com/sdgm/training.md)
+- [Large Scale Graph Learning](https://docs.nvidia.com/sdgm/how-distributed-training-works.md): How the Distributed Training Backend Works
+- [Run Mode](https://docs.nvidia.com/sdgm/run-mode.md)
+- [Model Plan](https://docs.nvidia.com/sdgm/model-planner.md)
+- [Model Plan Intuition](https://docs.nvidia.com/sdgm/model-plan-intuition.md)
+- [Evaluation](https://docs.nvidia.com/sdgm/evaluation.md)
+- [Classification](https://docs.nvidia.com/sdgm/classification.md): Suggest Edits
+- [Link Prediction](https://docs.nvidia.com/sdgm/link-prediction.md): Suggest Edits
+- [Regression](https://docs.nvidia.com/sdgm/regression.md): Suggest Edits
+- [Baselines](https://docs.nvidia.com/sdgm/baselines.md)
+- [Explainability](https://docs.nvidia.com/sdgm/explainability.md)
+- [REST API](https://docs.nvidia.com/sdgm/rest-api.md): Automate training and batch predictions using the Kumo REST API.
+- [UI to SDK Code Generation](https://docs.nvidia.com/sdgm/UItoSDK.md)
+- [Batch Predictions](https://docs.nvidia.com/sdgm/batch-prediction.md)
+- [Outputs](https://docs.nvidia.com/sdgm/batch-prediction-outputs.md)
+- [Quotas and Limits](https://docs.nvidia.com/sdgm/quotas-and-limits.md)
+- [Browser](https://docs.nvidia.com/sdgm/browsers.md)
+- [Kumo AI SaaS Security White Paper](https://docs.nvidia.com/sdgm/security-and-governance.md)
+- [Privacy Policy](https://docs.nvidia.com/sdgm/privacy-policy.md)
+- [Consumer Privacy](https://docs.nvidia.com/sdgm/consumer-privacy.md)
+- [Model Risk Management](https://docs.nvidia.com/sdgm/model-risk-management.md): Kumo features can help you with Model Risk Management
+- [Data Processing Addendum](https://docs.nvidia.com/sdgm/data-processing-addendum.md): Suggest Edits
+- [Deployment Modes](https://docs.nvidia.com/sdgm/deployment-modes.md)
+- [SaaS](https://docs.nvidia.com/sdgm/saas.md)
+- [Virtual Private Cloud](https://docs.nvidia.com/sdgm/virtual-private-cloud.md)
+- [Simplified VPC Deployment](https://docs.nvidia.com/sdgm/simplified-vpc-deployment.md)
+- [Snowflake Native App Fine-Tuning with Virtual Private Cloud Online Serving](https://docs.nvidia.com/sdgm/spcs-train-vpc-serving.md)
+- [Private Link](https://docs.nvidia.com/sdgm/private-link.md)
+- [Kumo as a Snowflake Native Application](https://docs.nvidia.com/sdgm/spcs/snowflake-native-application.md)
+- [Installing the Snowflake Native App](https://docs.nvidia.com/sdgm/spcs/installing-kumo-on-spcs.md)
+- [Architecture and Security](https://docs.nvidia.com/sdgm/spcs/spcs-security.md)
+- [Schedule Kumo Native App & Batch Predictions](https://docs.nvidia.com/sdgm/spcs/kumo-app-schedule-guide.md): This guide walks through setting up Snowflake Tasks and Procedures to automatically: Run a Snowflake Notebook at the schedule time Start the Kumo App and kick off Batch Prediction Job. Once BP job is finished, Stop the Kumo App at the end of the day. our new file.
+- [Enabling Parallel Job Concurrency in Kumo SPCS](https://docs.nvidia.com/sdgm/spcs/spcs-job-concurrency.md)
+- [Estimating Snowflake Resource Usage](https://docs.nvidia.com/sdgm/spcs/spcs-estimating-resource-usage.md)
+- [Troubleshooting and Support](https://docs.nvidia.com/sdgm/spcs/spcs-troubleshooting-and-support.md)
+- [Databricks Native Application](https://docs.nvidia.com/sdgm/databricks-native-application.md)
+- [Installing the Databricks Native App](https://docs.nvidia.com/sdgm/installing-the-databricks-native-app.md)
+- [Architecture and Security](https://docs.nvidia.com/sdgm/databricks-security.md)
+- [SSO Configuration Guide](https://docs.nvidia.com/sdgm/configuring-sso.md)
+- [Notebooks](https://docs.nvidia.com/sdgm/examples/notebooks.md): Discover how to leverage the Kumo SDK for your use case. 
+- [Predictive Query](https://docs.nvidia.com/sdgm/examples/predictive-query.md)
+- [Business Operations](https://docs.nvidia.com/sdgm/examples/business-operations.md)
+- [Demand Forecasting Solution](https://docs.nvidia.com/sdgm/examples/bizops-demand-forecast.md)
+- [Shipment Delay Prediction](https://docs.nvidia.com/sdgm/examples/bizops-shipment-delay.md)
+- [Entity Resolution](https://docs.nvidia.com/sdgm/examples/bizops-entity-resolution.md)
+- [Fraud](https://docs.nvidia.com/sdgm/examples/fraud.md)
+- [Chargeback Fraud Detection](https://docs.nvidia.com/sdgm/examples/fraud-chargeback-abuse.md)
+- [Credit Card Fraud Detection Solution](https://docs.nvidia.com/sdgm/examples/fraud-credit-card.md)
+- [Money Laundering Detection](https://docs.nvidia.com/sdgm/examples/fraud-money-laundering.md)
+- [Payback Abuse Detection Solution](https://docs.nvidia.com/sdgm/examples/fraud-payback-abuse.md)
+- [Fraud Detection Demo](https://docs.nvidia.com/sdgm/examples/fraud-detection-demo.md): Suggest Edits
+- [Growth and Marketing](https://docs.nvidia.com/sdgm/examples/growthmarketing.md): Suggest Edits
+- [Customer Churn Prediction](https://docs.nvidia.com/sdgm/examples/growth-churn.md)
+- [Lead Scoring Optimization](https://docs.nvidia.com/sdgm/examples/growth-lead-scoring.md)
+- [Customer Lifetime Value Prediction](https://docs.nvidia.com/sdgm/examples/growth-ltv.md)
+- [Anti-Targeting Solution](https://docs.nvidia.com/sdgm/examples/growth-anti-targeting.md)
+- [Best Time to Send Notification](https://docs.nvidia.com/sdgm/examples/best-time-to-send.md)
+- [Feature Adoption Prediction](https://docs.nvidia.com/sdgm/examples/growth-feature-adoption.md): Description of your new file.
+- [Personalization](https://docs.nvidia.com/sdgm/examples/personalization.md)
+- [Buy-It-Again Recommendation](https://docs.nvidia.com/sdgm/examples/pzn-buy-it-again.md)
+- [Cold Start Recommendation](https://docs.nvidia.com/sdgm/examples/pzn-cold-start.md)
+- [Item-to-Item Recommendation](https://docs.nvidia.com/sdgm/examples/pzn-related-items.md)
+- [Search Recommendations](https://docs.nvidia.com/sdgm/examples/pzn-search-browse-reranking.md)
+- [Personalized Email Recommendations](https://docs.nvidia.com/sdgm/examples/pzn-email-recommendations.md)
+- [Hybrid Graph Neural Networks](https://docs.nvidia.com/sdgm/examples/pzn-hybrid-graph-neural-networks.md): Why Recommendation Systems are Better Off Using Hybrid Graph Neural Networks
+- [Try Something New](https://docs.nvidia.com/sdgm/examples/pzn-try-something-new.md)
+- [Overview](https://docs.nvidia.com/sdgm/reference/pq-reference-overview.md)
+- [ASSUMING](https://docs.nvidia.com/sdgm/reference/assuming.md)
+- [CLASSIFY/RANK TOP K](https://docs.nvidia.com/sdgm/reference/rank.md)
+- [FOR EACH](https://docs.nvidia.com/sdgm/reference/for-each.md)
+- [PREDICT](https://docs.nvidia.com/sdgm/reference/predict.md)
+- [WHERE](https://docs.nvidia.com/sdgm/reference/where.md)
+- [AVG](https://docs.nvidia.com/sdgm/reference/avg.md)
+- [COUNT](https://docs.nvidia.com/sdgm/reference/count.md)
+- [COUNT_DISTINCT](https://docs.nvidia.com/sdgm/reference/count_distinct.md)
+- [FIRST](https://docs.nvidia.com/sdgm/reference/first.md)
+- [LAST](https://docs.nvidia.com/sdgm/reference/last.md)
+- [LIST_DISTINCT](https://docs.nvidia.com/sdgm/reference/list_distinct.md)
+- [MAX](https://docs.nvidia.com/sdgm/reference/max.md)
+- [MIN](https://docs.nvidia.com/sdgm/reference/min.md)
+- [SUM](https://docs.nvidia.com/sdgm/reference/sum.md)
+- [!=](https://docs.nvidia.com/sdgm/reference/page.md)
+- [<](https://docs.nvidia.com/sdgm/reference/page-1.md)
+- [<=](https://docs.nvidia.com/sdgm/reference/page-2.md)
+- [=](https://docs.nvidia.com/sdgm/reference/page-3.md)
+- [>](https://docs.nvidia.com/sdgm/reference/page-4.md)
+- [>=](https://docs.nvidia.com/sdgm/reference/page-5.md)
+- [AND](https://docs.nvidia.com/sdgm/reference/and.md)
+- [CONTAINS](https://docs.nvidia.com/sdgm/reference/contains.md)
+- [ENDS WITH](https://docs.nvidia.com/sdgm/reference/ends_with.md)
+- [IN](https://docs.nvidia.com/sdgm/reference/in.md)
+- [IS NOT NULL](https://docs.nvidia.com/sdgm/reference/is_not_null.md)
+- [IS NULL](https://docs.nvidia.com/sdgm/reference/is_null.md)
+- [LIKE](https://docs.nvidia.com/sdgm/reference/like.md)
+- [NOT LIKE](https://docs.nvidia.com/sdgm/reference/not-like.md)
+- [NOT CONTAINS](https://docs.nvidia.com/sdgm/reference/not_contains.md)
+- [NOT](https://docs.nvidia.com/sdgm/reference/not.md)
+- [OR](https://docs.nvidia.com/sdgm/reference/or.md)
+- [STARTS WITH](https://docs.nvidia.com/sdgm/reference/starts_with.md)
+- [kumoai](https://docs.nvidia.com/sdgm/sdk/kumoai.md): Root module — initialization, logging, and core type enumerations
+- [kumoai.connector](https://docs.nvidia.com/sdgm/sdk/kumoai-connector.md): Connector and SourceTable interfaces for accessing raw data
+- [kumoai.graph](https://docs.nvidia.com/sdgm/sdk/kumoai-graph.md): Graph, Table, and Column — the relational schema definitions for Kumo
+- [kumoai.pquery](https://docs.nvidia.com/sdgm/sdk/kumoai-pquery.md): PredictiveQuery, training tables, and prediction tables
+- [kumoai.encoder](https://docs.nvidia.com/sdgm/sdk/kumoai-encoder.md): Encoder overrides for column-level preprocessing
+- [kumoai.trainer](https://docs.nvidia.com/sdgm/sdk/kumoai-trainer.md): Trainer, ModelPlan, training jobs, batch prediction, and online serving
+- [kumoai.utils](https://docs.nvidia.com/sdgm/sdk/kumoai-utils.md): Dataset utilities and forecast visualization
+- [kumoai.rfm](https://docs.nvidia.com/sdgm/sdk/kumoai-rfm.md): KumoRFM - the pre-trained Relational Foundation Model
+- [Column Processing](https://docs.nvidia.com/sdgm/reference/column_processing.md)
+- [GNN architecture](https://docs.nvidia.com/sdgm/reference/gnn_model.md)
+- [aggregation](https://docs.nvidia.com/sdgm/reference/gnn_aggregation.md)
+- [channels](https://docs.nvidia.com/sdgm/reference/gnn_channels.md)
+- [Graph Transformer architecture](https://docs.nvidia.com/sdgm/reference/gt_model.md)
+- [channels](https://docs.nvidia.com/sdgm/reference/gt_channels.md)
+- [num_layers](https://docs.nvidia.com/sdgm/reference/gt_num_layers.md)
+- [num_heads](https://docs.nvidia.com/sdgm/reference/gt_num_heads.md)
+- [dropout](https://docs.nvidia.com/sdgm/reference/gt_dropout.md)
+- [positional_encodings](https://docs.nvidia.com/sdgm/reference/gt_positional_encodings.md)
+- [Selecting Link Prediction Model Architectures on Kumo](https://docs.nvidia.com/sdgm/reference/link_prediction_arch.md): Guide to Model Architecture Selection for Link Prediction
+- [activation](https://docs.nvidia.com/sdgm/reference/activation.md)
+- [distance_measure](https://docs.nvidia.com/sdgm/reference/distance_measure.md)
+- [handle_new_target_entities](https://docs.nvidia.com/sdgm/reference/handle_new_target_entities.md)
+- [module](https://docs.nvidia.com/sdgm/reference/module.md)
+- [normalization](https://docs.nvidia.com/sdgm/reference/normalization.md)
+- [num_post_message_passing_layers](https://docs.nvidia.com/sdgm/reference/num_post_message_passing_layers.md)
+- [num_pre_message_passing_layers](https://docs.nvidia.com/sdgm/reference/num_pre_message_passing_layers.md)
+- [ranking_embedding_loss_coeff](https://docs.nvidia.com/sdgm/reference/ranking_embedding_loss_coeff.md)
+- [output_embedding_dim](https://docs.nvidia.com/sdgm/reference/output_embedding_dim.md)
+- [prediction_time_encodings](https://docs.nvidia.com/sdgm/reference/prediction_time_encodings.md)
+- [target_embedding_mode](https://docs.nvidia.com/sdgm/reference/target_embedding_mode.md)
+- [use_seq_id](https://docs.nvidia.com/sdgm/reference/use_seq_id.md)
+- [num_neighbors](https://docs.nvidia.com/sdgm/reference/num_neighbors.md)
+- [sample_from_entity_table](https://docs.nvidia.com/sdgm/reference/sample_from_entity_table.md)
+- [base_lr](https://docs.nvidia.com/sdgm/reference/base_lr.md)
+- [batch_size](https://docs.nvidia.com/sdgm/reference/batch_size.md)
+- [early_stopping](https://docs.nvidia.com/sdgm/reference/early_stopping.md)
+- [lr_scheduler](https://docs.nvidia.com/sdgm/reference/lr_scheduler.md)
+- [loss](https://docs.nvidia.com/sdgm/reference/loss.md)
+- [majority_sampling_ratio](https://docs.nvidia.com/sdgm/reference/majority_sampling_ratio.md)
+- [max_epochs](https://docs.nvidia.com/sdgm/reference/max_epochs.md)
+- [max_steps_per_epoch](https://docs.nvidia.com/sdgm/reference/max_steps_per_epoch.md)
+- [max_test_steps](https://docs.nvidia.com/sdgm/reference/max_test_steps.md)
+- [max_val_steps](https://docs.nvidia.com/sdgm/reference/max_val_steps.md)
+- [weight_decay](https://docs.nvidia.com/sdgm/reference/weight_decay.md)
+- [weight_mode](https://docs.nvidia.com/sdgm/reference/weight_mode.md)
+- [refit_full](https://docs.nvidia.com/sdgm/reference/refit_full.md)
+- [refit_trainval](https://docs.nvidia.com/sdgm/reference/refit_trainval.md)
+- [metrics](https://docs.nvidia.com/sdgm/reference/metrics.md)
+- [num_experiments](https://docs.nvidia.com/sdgm/reference/num_experiments.md)
+- [tune_metric](https://docs.nvidia.com/sdgm/reference/tune_metric.md)
+- [end_time](https://docs.nvidia.com/sdgm/reference/end_time.md)
+- [forecast_length](https://docs.nvidia.com/sdgm/reference/forecast_length.md)
+- [forecast_type](https://docs.nvidia.com/sdgm/reference/forecast_type.md)
+- [lag_timesteps](https://docs.nvidia.com/sdgm/reference/lag_timesteps.md)
+- [year_over_year](https://docs.nvidia.com/sdgm/reference/year_over_year.md)
+- [weight_col](https://docs.nvidia.com/sdgm/reference/weight_col.md)
+- [split](https://docs.nvidia.com/sdgm/reference/split.md)
+- [start_time](https://docs.nvidia.com/sdgm/reference/start_time.md)
+- [timeframe_step](https://docs.nvidia.com/sdgm/reference/timeframe_step.md)
+- [train_end_offset](https://docs.nvidia.com/sdgm/reference/train_end_offset.md)
+- [train_start_offset](https://docs.nvidia.com/sdgm/reference/train_start_offset.md)
+- [What is the recommended way to reduce model training time?](https://docs.nvidia.com/sdgm/troubleshooting/what-is-the-recommended-way-to-reduce-model-training-time.md)
+- [What columns should I select in a table?](https://docs.nvidia.com/sdgm/troubleshooting/column-selection.md)
+- [What Tables Should I Link?](https://docs.nvidia.com/sdgm/troubleshooting/table-linkages.md)
+- [How can I troubleshoot data quality issues?](https://docs.nvidia.com/sdgm/troubleshooting/how-can-i-troubleshoot-data-quality-issues-or-problems-with-my-pquery.md)
+- [How are Kumo table columns preprocessed?](https://docs.nvidia.com/sdgm/troubleshooting/column-preprocessing-faq.md)
+- [How can I improve the quality of my data?](https://docs.nvidia.com/sdgm/troubleshooting/data-quality-mistakes-and-how-to-catch-them.md): General tips for ensuring data quality when creating graphs and executing pQueries and batch predictions.
+- [Preventing data leakage and handling time correctness](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-handle-time-correctness-to-prevent-data-leakage.md)
+- [How does Kumo handle missing values in my dataset?](https://docs.nvidia.com/sdgm/troubleshooting/how-does-kumo-handle-missing-values-in-my-dataset.md)
+- [What mechanisms does Kumo provide to detect data leakage?](https://docs.nvidia.com/sdgm/troubleshooting/what-mechanisms-does-kumo-provide-to-detect-data-leakage.md)
+- [How does Kumo handle timezones for timestamp values?](https://docs.nvidia.com/sdgm/troubleshooting/how-does-kumo-handle-timezones-for-timestamp-values.md)
+- [What types of data can Kumo ingest?](https://docs.nvidia.com/sdgm/troubleshooting/what-types-of-data-can-kumo-ingest.md)
+- [How can I incorporate an external model for embedding a column?](https://docs.nvidia.com/sdgm/troubleshooting/how-can-i-use-an-external-model-for-embedding-a-column.md)
+- [How and when are timestamps used in Kumo?](https://docs.nvidia.com/sdgm/troubleshooting/how-and-when-are-timestamps-used-in-kumo.md)
+- [How does Kumo handle data governance and privacy](https://docs.nvidia.com/sdgm/troubleshooting/how-does-kumo-handle-data-governance-and-privacy.md)
+- [How should I scale/handle outliers in the data?](https://docs.nvidia.com/sdgm/troubleshooting/how-should-i-scalehandle-outliers-in-the-data.md): Suggest Edits
+- [What model architectures does Kumo incorporate into its GNN design search space?](https://docs.nvidia.com/sdgm/troubleshooting/what-model-architectures-does-kumo-incorporate-into-its-gnn-design-search-space.md)
+- [How do I use a feature store with Kumo?](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-use-a-feature-store.md)
+- [How do I perform feature engineering with Kumo?](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-do-feature-engineering.md): Suggest Edits
+- [How do I specify the train/validation/test splits?](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-specify-the-train-validation-test-splits.md): Suggest Edits
+- [Which datasets should I use for my predictive query?](https://docs.nvidia.com/sdgm/troubleshooting/which-datasets-should-i-use-for-my-predictive-query.md): Best practices for selecting the right datasets to use in a predictive query.
+- [Does a <MISSING> score field indicate that the column was excluded from training?](https://docs.nvidia.com/sdgm/troubleshooting/does-a-missing-score-field-indicate-that-the-column-was-excluded-from-training.md): Suggest Edits
+- [Can I use specific date and time values in my PQuery filters?](https://docs.nvidia.com/sdgm/troubleshooting/can-i-use-specific-date-and-time-values-in-my-pquery-filters.md)
+- [What Is Anchor Time and Why Is It Important?](https://docs.nvidia.com/sdgm/troubleshooting/what-is-anchor-time-and-why-is-it-important.md): Time as a first-class citizen in Kumo.
+- [Debugging Model Performance](https://docs.nvidia.com/sdgm/troubleshooting/debugging-poor-model-performance.md)
+- [How do I improve model performance?](https://docs.nvidia.com/sdgm/troubleshooting/model-improvement.md)
+- [How do I perform backtesting on a holdout dataset?](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-perform-backtesting-on-a-holdout-dataset.md)
+- [Can I tune model hyperparameters?](https://docs.nvidia.com/sdgm/troubleshooting/can-i-tune-model-hyperparameters.md)
+- [How can I make my training jobs run faster?](https://docs.nvidia.com/sdgm/troubleshooting/how-can-i-make-my-training-jobs-run-faster.md)
+- [How can I start with a smaller graph and/or a downsampled data set?](https://docs.nvidia.com/sdgm/troubleshooting/how-can-i-start-with-a-smaller-graph-andor-a-downsampled-data-set.md)
+- [How do I assign different weights to training samples?](https://docs.nvidia.com/sdgm/troubleshooting/can-i-perform-weighted-training.md): Learn how to use instance-level weights to influence model training in Kumo.
+- [Warm Start Training: Initialize from Existing Models](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-initialize-training-from-an-existing-model.md): Learn how to fine tune a model by initializing from a previously trained model's weights
+- [How does Kumo handle the cold start problem in ML?](https://docs.nvidia.com/sdgm/troubleshooting/how-does-kumo-handle-the-cold-start-problem-in-ml.md)
+- [How do I calibrate my model?](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-calibrate-my-model.md): Suggest Edits
+- [How can I compare a predictive query with an external model?](https://docs.nvidia.com/sdgm/troubleshooting/how-can-i-compare-a-predictive-query-with-an-external-model.md): Best practices for comparing the performance of a Predictive Query against a historical baseline, heuristic, or machine learning model.
+- [Why is my PQuery underperforming for a particular subset of data?](https://docs.nvidia.com/sdgm/troubleshooting/why-is-my-pquery-is-underperforming-for-a-particular-subset-of-data.md): Suggest Edits
+- [How do I generate predictions on new data using a previously trained model?](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-generate-predictions-on-new-data-using-a-previously-trained-model.md)
+- [How can I diagnose problems with my data pipeline at batch prediction time?](https://docs.nvidia.com/sdgm/troubleshooting/how-can-i-diagnose-problems-with-my-data-pipeline-at-batch-prediction-time.md)
+- [What happens if the predictions per entity value in batch predictions differs from the initial pQuery’s RANK TOP K value?](https://docs.nvidia.com/sdgm/troubleshooting/what-happens-if-the-predictions-per-entity-value-in-batch-predictions-differs-from-the-initial-pquerys-rank-top-k-value.md)
+- [What are Embedding Outputs?](https://docs.nvidia.com/sdgm/troubleshooting/embedding-outputs.md)
+- [How do I generate predictions with a different graph than my training graph?](https://docs.nvidia.com/sdgm/troubleshooting/how-do-i-make-inference-on-a-different-graph.md)
+- [Tables](https://docs.nvidia.com/sdgm/troubleshooting/sdk-tables.md): Frequently asked questions about defining tables with the Kumo SDK
+- [Graphs](https://docs.nvidia.com/sdgm/troubleshooting/sdk-graphs.md): Frequently asked questions about building graphs with the Kumo SDK
+- [Predictive Queries](https://docs.nvidia.com/sdgm/troubleshooting/sdk-pquery.md): Frequently asked questions about writing predictive queries with the Kumo SDK
+- [Model Training](https://docs.nvidia.com/sdgm/troubleshooting/sdk-training.md): Frequently asked questions about training Kumo models via the SDK
+- [Product Updates](https://docs.nvidia.com/sdgm/releases/releases.md): New updates and improvements for KumoRFM and the Fine-Tuning Platform
+- [2025 Product Updates](https://docs.nvidia.com/sdgm/releases/releases-2025.md): New updates and improvements
+- [2024 Product Updates](https://docs.nvidia.com/sdgm/releases/releases-2024.md): New updates and improvements
+- [2023 Product Updates](https://docs.nvidia.com/sdgm/releases/releases-2023.md): New updates and improvements

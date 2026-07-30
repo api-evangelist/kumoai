@@ -1,0 +1,85 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.nvidia.com/sdgm/rest-api , https://docs.nvidia.com/sdgm/rfm/configuration
+  , https://docs.nvidia.com/sdgm/quotas-and-limits
+authentication:
+  style: api-key-header
+  header: X-API-Key
+  key_format: <customer_id>:<secret_value>
+  artifact: authentication/kumoai-authentication.yml
+base_url:
+  pattern: https://<customer_id>.kumoai.cloud/api
+  note: Base URL is tenant-scoped; there is no shared multi-tenant public host.
+query_interface:
+  name: Predictive Query Language (PQL)
+  description: SQL-like declarative language for expressing a prediction as Target
+    × Entity × Horizon (e.g. PREDICT SUM(orders.amount, 0, 30, days) FOR EACH users.user_id).
+    Predictions are requested as queries rather than as per-resource CRUD calls.
+  docs: https://docs.nvidia.com/sdgm/rfm/querying-rfm
+idempotency:
+  supported: false
+  note: Kumo publishes no idempotency-key contract for the REST API. Retrain and batch-prediction
+    calls are job-submitting operations without a documented request-deduplication
+    header, so no Idempotency pointer is emitted.
+pagination:
+  documented: false
+  note: The REST API surface is job-oriented (retrain, batch predict, job status, cancel)
+    rather than collection-oriented; no pagination contract is published.
+async_jobs:
+  model: submit-and-poll
+  operations:
+  - retrain a predictive query
+  - run a batch prediction
+  - monitor job status and evaluation metrics
+  - cancel an in-progress job
+  queueing: Up to 15 jobs (training or batch prediction) may be queued.
+  parallelism: Up to 10 parallel jobs on SaaS/Databricks Native; 1 on Snowflake Native.
+  docs: https://docs.nvidia.com/sdgm/rest-api
+retries:
+  documented: true
+  note: The RFM SDK exposes retry handling and batch mode as runtime configuration.
+  docs: https://docs.nvidia.com/sdgm/rfm/configuration
+run_modes:
+  parameter: run_mode
+  values:
+  - id: DEBUG
+    context_size: 100
+    use_case: Quick iteration, testing queries
+  - id: FAST
+    context_size: 1000
+    default: true
+    use_case: Good balance of speed and quality
+  - id: NORMAL
+    context_size: 5000
+    use_case: Higher quality predictions
+  - id: BEST
+    context_size: 10000
+    use_case: Maximum quality
+  docs: https://docs.nvidia.com/sdgm/rfm/configuration
+temporal_semantics:
+  anchor_time: Prediction timestamp; defaults to the maximum timestamp in the data,
+    or per-entity when set to "entity".
+  context_anchor_time: Maximum anchor timestamp for in-context examples.
+  use_prediction_time: Include the anchor time as an additional feature.
+  lag_timesteps: Number of past timesteps included as lagged target features.
+  note: Anchor time is the core correctness control for preventing data leakage.
+  docs: https://docs.nvidia.com/sdgm/troubleshooting/what-is-anchor-time-and-why-is-it-important
+errors:
+  envelope: PQL parser/validator error messages plus structured failure categories
+    (A–F).
+  artifact: errors/kumoai-problem-types.yml
+  docs: https://github.com/kumo-ai/kumo-coding-agent/blob/main/context/platform/pql-errors.md
+rate_limits:
+  style: quotas-and-concurrency (data scale limits + job queue/parallelism), not request-rate
+    throttling
+  artifact: rate-limits/kumoai-rate-limits.yml
+  docs: https://docs.nvidia.com/sdgm/quotas-and-limits
+versioning:
+  scheme: semver on the Python SDK and MCP server packages; no version segment in
+    the REST API path
+  artifact: lifecycle/kumoai-lifecycle.yml
+cross_references:
+  authentication: authentication/kumoai-authentication.yml
+  errors: errors/kumoai-problem-types.yml
+  lifecycle: lifecycle/kumoai-lifecycle.yml
+  rate_limits: rate-limits/kumoai-rate-limits.yml

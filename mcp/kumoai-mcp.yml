@@ -1,0 +1,90 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/kumo-ai/kumo-rfm-mcp
+status: published
+servers:
+- name: kumo-rfm-mcp
+  title: KumoRFM (Relational Foundation Model)
+  description: Full-featured MCP server that lets AI assistants build relational graphs
+    from CSV/Parquet files, write Predictive Query Language (PQL) queries, and run
+    training-free predictions, evaluations, and explanations against KumoRFM.
+  repository: https://github.com/kumo-ai/kumo-rfm-mcp
+  package:
+    registry: pypi
+    name: kumo-rfm-mcp
+    version: 0.3.1
+    install: pip install kumo-rfm-mcp
+  transports:
+  - stdio
+  - streamable-http
+  command: python -m kumo_rfm_mcp.server
+  http_flags: --transport streamable-http --host 0.0.0.0 --port 8000 --path /mcp
+  auth:
+    env: KUMO_API_KEY
+    http_bearer_env: MCP_BEARER_TOKEN
+    notes: 'Set KUMO_API_KEY for headless deployments to avoid the browser-based OAuth
+      flow; clients that cannot inject env vars may call the `authenticate` tool with
+      an `api_key` argument once at session start. When MCP_BEARER_TOKEN is set the
+      HTTP endpoint requires an `Authorization: Bearer <token>` header.'
+  bundle:
+    format: MCPB (.dxt)
+    url: https://kumo-sdk-public.s3.us-west-2.amazonaws.com/dxt/kumo-rfm-mcp-0.2.0.dxt
+  install_claude_code: 'claude mcp add --transport stdio kumo-rfm-mcp --env KUMO_API_KEY=<YOUR-API-KEY>
+    -- python -m kumo_rfm_mcp.server --port 8000'
+  tools:
+  - name: get_docs
+    description: Get documentation on how to use KumoRFM (overview, graph-setup, predictive-query,
+      explainability).
+    source: kumo_rfm_mcp/tools/docs.py
+  - name: authenticate
+    description: Authenticate the current KumoRFM session.
+    source: kumo_rfm_mcp/tools/auth.py
+  - name: find_table_files
+    description: Finds all table-like files (e.g., CSV, Parquet) in a directory.
+    source: kumo_rfm_mcp/tools/io.py
+  - name: inspect_table_files
+    description: Inspect the first rows of table-like files.
+    source: kumo_rfm_mcp/tools/io.py
+  - name: inspect_graph_metadata
+    description: Inspect the current graph metadata.
+    source: kumo_rfm_mcp/tools/graph.py
+  - name: update_graph_metadata
+    description: Partially update the current graph metadata.
+    source: kumo_rfm_mcp/tools/graph.py
+  - name: get_mermaid
+    description: Return the graph as a Mermaid entity relationship diagram.
+    source: kumo_rfm_mcp/tools/graph.py
+  - name: materialize_graph
+    description: Materialize the graph based on the current state of the graph metadata.
+    source: kumo_rfm_mcp/tools/graph.py
+  - name: lookup_table_rows
+    description: Lookup rows in the raw data frame of a table for a list of primary
+      keys.
+    source: kumo_rfm_mcp/tools/graph.py
+  - name: predict
+    description: Execute a predictive query and return model predictions.
+    source: kumo_rfm_mcp/tools/model.py
+  - name: evaluate
+    description: Evaluate a predictive query and return performance metrics.
+    source: kumo_rfm_mcp/tools/model.py
+  - name: explain
+    description: Execute a predictive query and explain the model prediction.
+    source: kumo_rfm_mcp/tools/model.py
+  resources:
+  - uri: kumo://docs/overview
+    name: Overview of KumoRFM
+  - uri: kumo://docs/graph-setup
+    name: Graph Setup
+  - uri: kumo://docs/predictive-query
+    name: Predictive Query
+  - uri: kumo://docs/explainability
+    name: Explainability
+- name: kumo-docs-mcp
+  title: Kumo / NVIDIA SDGM documentation MCP server
+  description: Hosted MCP server over the Kumo (Structured Data and Graph Models)
+    documentation, advertised in the docs llms.txt for AI client integration.
+  url: https://docs.nvidia.com/sdgm/_mcp/server
+  transports:
+  - http
+  source: https://docs.nvidia.com/sdgm/llms.txt
+notes: KumoRFM API keys are issued at https://kumorfm.ai.

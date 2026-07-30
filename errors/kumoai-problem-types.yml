@@ -1,0 +1,141 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/kumo-ai/kumo-coding-agent/blob/main/context/platform/pql-errors.md
+docs: https://docs.nvidia.com/sdgm/troubleshooting/how-can-i-troubleshoot-data-quality-issues-or-problems-with-my-pquery
+format: provider-specific
+envelope: PQL parser and validator error messages, classified by Kumo into failure
+  categories A–F. Kumo publishes no RFC 9457 application/problem+json contract and
+  no OpenAPI, so this catalog is the query-level error registry rather than an HTTP
+  problem-type registry.
+upstream_source: kumo-pql (PQL_FAILURE_CATEGORIES, PQL_SYNTAX_ERRORS), last synced
+  by Kumo 2026-03-31
+categories:
+- id: A
+  name: Schema & Relationship Limitations
+- id: B
+  name: Time & Aggregation Limitations
+- id: C
+  name: ASSUMING Clause Limitations
+- id: D
+  name: Unsupported and Restricted Operations
+- id: E
+  name: Entity & Filter Limitations
+- id: F
+  name: Business Data Limitations
+problems:
+- code: A1
+  category: A
+  title: Missing FK Path
+  detail: No direct foreign key relationship between the entity table and the target
+    table.
+  remediation: Add or expose a direct FK linking the entity table to the target table.
+- code: A2
+  category: A
+  title: Multi-hop FK
+  detail: Requires traversing more than one FK relationship (e.g. users → orders →
+    products) when only direct single-hop is supported.
+- code: A3
+  category: A
+  title: Multi-value FK
+  detail: FK relationship is one-to-many in the wrong direction — the entity table
+    has many rows per target table row.
+- code: A4
+  category: A
+  title: Missing Column
+  detail: Referenced column does not exist in the semantic view (typo, or column not
+    included in the view definition).
+- code: A5
+  category: A
+  title: Missing Data
+  detail: Column exists but has no data or is all NULLs.
+- code: B1
+  category: B
+  title: Past-Only Aggregation
+  detail: Time window does not extend into the future — both bounds are negative.
+  remediation: The `end` parameter must be positive; the window must reach into the
+    future.
+- code: B2
+  category: B
+  title: Nested Aggregation
+  detail: An aggregation is nested inside another aggregation.
+- code: B3
+  category: B
+  title: AVG/SUM on Categorical
+  detail: Numeric aggregation applied to a categorical column.
+  remediation: Use COUNT with filters for categorical analysis; SUM and AVG require
+    numeric columns.
+- code: C1
+  category: C
+  title: Static ASSUMING
+  detail: ASSUMING used with a static column prediction instead of an aggregation target.
+- code: D1
+  category: D
+  title: COUNT_DISTINCT unsupported in RFM
+  detail: In the PQL grammar but fine-tuned only — blocked in RFM mode.
+- code: D2
+  category: D
+  title: FIRST / LAST unsupported in RFM
+  detail: In the PQL grammar but fine-tuned only — blocked in RFM mode.
+- code: D4
+  category: D
+  title: LIKE / Pattern Match blocked in RFM
+  detail: In the PQL grammar but blocked in RFM mode for string operations.
+- code: D4b
+  category: D
+  title: CONTAINS / STARTS WITH / ENDS WITH blocked in RFM
+  detail: In the PQL grammar but blocked in RFM mode.
+- code: D5
+  category: D
+  title: RANK TOP K unsupported in RFM
+  detail: Fine-tuned only — for multicategorical targets, blocked in RFM.
+- code: D6
+  category: D
+  title: Subqueries not supported
+  detail: Nested SELECT statements are not in the PQL grammar.
+- code: D7
+  category: D
+  title: ORDER BY / LIMIT not supported
+  detail: Result ordering and row limits are not part of PQL.
+- code: D8
+  category: D
+  title: GROUP BY not supported
+  detail: Explicit grouping is not in the grammar — the entity is the implicit group.
+- code: D9
+  category: D
+  title: Multi-target not supported
+  detail: Cannot predict multiple targets in a single query.
+- code: D10
+  category: D
+  title: MEDIAN / STDDEV not supported
+  detail: Not in the PQL grammar.
+- code: E1
+  category: E
+  title: Non-PK Entity
+  detail: FOR EACH references a column that is not a primary key (e.g. FOR EACH users.email).
+- code: E2
+  category: E
+  title: Cross-table Filter
+  detail: WHERE clause references a table unrelated to the entity.
+- code: E3
+  category: E
+  title: Aggregation in WHERE
+  detail: Aggregation function used inside the entity WHERE clause.
+- code: F1
+  category: F
+  title: Insufficient History
+  detail: Not enough historical data for the requested prediction window (e.g. predicting
+    365-day totals with only 90 days of data).
+- code: F2
+  category: F
+  title: Concept Drift
+  detail: Historical patterns do not reflect future behavior (seasonal products, one-time
+    events).
+parser_error_classes:
+- Grammar-Level Syntax Errors
+- Reference Errors
+- Type Mismatch Errors
+- Semantic Type Errors
+- Time Range Errors
+- Entity Specification Errors
+- Unsupported Operation Errors
+- Join Resolution Errors

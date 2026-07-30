@@ -1,0 +1,56 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.nvidia.com/sdgm/security-and-governance , https://docs.nvidia.com/sdgm/rest-api
+  , https://github.com/kumo-ai/kumo-rfm-mcp
+standards:
+- id: soc2
+  conforms: true
+  evidence: Kumo maintains a SOC 2 report covering security, availability, confidentiality,
+    processing integrity, and privacy; published at https://security.kumo.ai/ per the
+    SaaS Security White Paper.
+- id: nist-800-53
+  conforms: partial
+  evidence: Referenced as a framework Kumo relies on to support its security initiatives
+    — an alignment claim, not a certification.
+- id: iso-27000-series
+  conforms: partial
+  evidence: Referenced as a framework Kumo relies on; no ISO 27001 certification is
+    claimed.
+- id: gdpr
+  conforms: partial
+  evidence: Kumo publishes a Data Processing Addendum and a Consumer Privacy page;
+    no explicit GDPR certification claim.
+- id: model-context-protocol
+  conforms: true
+  evidence: kumo-rfm-mcp is a published MCP server (FastMCP) exposing tools and resources
+    over stdio and streamable-http, plus an MCPB bundle.
+- id: oauth2
+  conforms: false
+  evidence: The REST API authenticates with an X-API-Key header; no OAuth2 authorization
+    server is published. (The kumo-rfm-mcp client has a browser-based sign-in flow
+    for obtaining a KumoRFM key, but no documented OAuth2 API surface.)
+- id: oidc
+  conforms: false
+  evidence: No /.well-known/openid-configuration served; probes returned 404 / SPA
+    soft-404.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json contract published; errors are PQL parser/validator
+    messages classified into failure categories A–F.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on kumo.ai.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No deprecation policy or Sunset header support documented.
+- id: openapi
+  conforms: false
+  evidence: No OpenAPI/Swagger description is published for the Kumo REST API.
+- id: llms-txt
+  conforms: true
+  evidence: A conformant llms.txt is published on the documentation host (https://docs.nvidia.com/sdgm/llms.txt)
+    and harvested to llms/kumoai-llms.txt.
+- id: agent-skills
+  conforms: true
+  evidence: Kumo publishes an agentskills.io-format skills catalog (https://github.com/kumo-ai/kumo-skills-catalog)
+    including the kumo-rfm-agent and kumo-tuning-agent skills.

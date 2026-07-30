@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.nvidia.com/sdgm/quotas-and-limits
+docs: https://docs.nvidia.com/sdgm/quotas-and-limits
+style: quotas-and-concurrency
+note: Kumo publishes data-scale quotas and job concurrency limits rather than HTTP
+  request-rate limits. Limits vary by deployment mode and a given account may be configured
+  lower; increases are handled through the customer's Kumo contact.
+rate_limits:
+- name: Queued jobs
+  limit_count: 15
+  unit: jobs
+  scope: training or batch prediction jobs queued at once
+- name: Parallel job execution (SaaS)
+  limit_count: 10
+  unit: jobs
+  scope: SaaS deployment
+- name: Parallel job execution (Databricks Native)
+  limit_count: 10
+  unit: jobs
+  scope: Databricks Native deployment
+- name: Parallel job execution (Snowflake Native)
+  limit_count: 1
+  unit: jobs
+  scope: Snowflake Native deployment; parallelism achieved by launching multiple Kumo
+    applications
+quotas:
+- name: Rows in a table
+  saas: 15000000000
+  snowflake_native: 1000000000
+  databricks_native: 10000000000
+- name: Columns in a table
+  saas: 2000
+  snowflake_native: 100
+  databricks_native: 2000
+- name: Table size
+  saas: 2 TB
+  snowflake_native: 100 GB
+  databricks_native: 2 TB
+- name: Row size
+  saas: 10 KB
+  snowflake_native: 10 KB
+  databricks_native: 10 KB
+- name: Tables in a graph
+  saas: 12
+  snowflake_native: 12
+  databricks_native: 12
+- name: Rows in a graph
+  saas: 30000000000
+  snowflake_native: 1000000000
+  databricks_native: 30000000000
+- name: Graph size
+  saas: 2 TB
+  snowflake_native: 200 GB
+  databricks_native: 2 TB
+- name: Edges in a graph
+  saas: 30000000000
+  snowflake_native: 4000000000
+  databricks_native: 30000000000

@@ -1,0 +1,51 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/kumoai/ , https://pypi.org/project/kumo-rfm-mcp/
+packages:
+- language: python
+  registry: pypi
+  name: kumoai
+  version: 2.22.0
+  url: https://pypi.org/project/kumoai/
+  install: pip install kumoai
+  official: true
+  description: The Kumo SDK — a pythonic interface for programmatically interacting
+    with the Kumo machine learning platform (data connectors, graphs, predictive queries,
+    training, batch prediction, and the experimental RFM module).
+  python_requires: '>=3.10,<3.15'
+  extras:
+  - kumoai[sqlite]
+  - kumoai[duckdb]
+  - kumoai[snowflake]
+  homepage: https://kumo.ai
+  documentation: https://kumo.ai/docs
+- language: python
+  registry: pypi
+  name: kumo-rfm-mcp
+  version: 0.3.1
+  url: https://pypi.org/project/kumo-rfm-mcp/
+  install: pip install kumo-rfm-mcp
+  official: true
+  description: Model Context Protocol server for KumoRFM.
+  repository: https://github.com/kumo-ai/kumo-rfm-mcp
+  homepage: https://kumorfm.ai
+registries_probed:
+- registry: pypi
+  result: found (kumoai, kumo-rfm-mcp)
+- registry: npm
+  result: 'no first-party package (the `kumoai` name exists but publishes no versions
+    and carries no repository/description — not treated as official)'
+- registry: maven-central
+  result: none found
+- registry: nuget
+  result: none found
+- registry: pkg.go.dev
+  result: none found
+- registry: rubygems
+  result: none found
+- registry: packagist
+  result: none found
+- registry: crates.io
+  result: none found
+notes: Kumo ships a Python-only client surface. Nightly `3.0.0.devYYYYMMDDHHMM` builds
+  of `kumoai` are published daily to PyPI alongside the stable 2.x line.
