@@ -34,6 +34,17 @@ created: '2026-07-17'
 modified: '2026-07-19'
 tags:
 - Company
+- Artificial Intelligence
+- Machine-Learning
+- Predictive Analytics
+- Graph Neural Networks
+- Foundation Models
+- Data Warehouse
+- MCP
+- Agents
+- Relational Data
+tags_raw:
+- Company
 - Ai
 - Machine Learning
 - Predictive Analytics
@@ -54,6 +65,10 @@ apis:
   baseURL: https://<customer_id>.kumoai.cloud/api
   x-baseURL-note: The public API URL is tenant-scoped; SPCS deployments use https://<kumo_spcs_deployment_url>/api.
   tags:
+  - Machine-Learning
+  - Batch Prediction
+  - Job
+  tags_raw:
   - Machine Learning
   - Batch Prediction
   - Jobs
@@ -72,6 +87,10 @@ apis:
   humanURL: https://github.com/kumo-ai/kumo-rfm-mcp
   baseURL: https://kumorfm.ai
   tags:
+  - MCP
+  - Agents
+  - Predictions
+  tags_raw:
   - Model Context Protocol
   - Agents
   - Predictions
