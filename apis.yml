@@ -10,6 +10,19 @@ description: 'Kumo.AI builds predictive AI for relational data. Its flagship mod
   a Snowflake Native Application, and a Databricks Native Application. Kumo product
   documentation is now hosted by NVIDIA under Structured Data and Graph Models.'
 url: https://raw.githubusercontent.com/api-evangelist/kumoai/refs/heads/main/apis.yml
+deliveryModel:
+  model: open-core
+  license: MIT
+  open_source: true
+  commercial: true
+  callable_host: false
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
