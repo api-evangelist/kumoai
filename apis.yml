@@ -89,7 +89,7 @@ apis:
   - type: Documentation
     url: https://docs.nvidia.com/sdgm/rest-api
   - type: Authentication
-    url: ../authentication/kumoai-authentication.yml
+    url: authentication/kumoai-authentication.yml
 - aid: kumoai-rfm-mcp
   name: KumoRFM MCP Server
   description: Open-source Model Context Protocol server that empowers AI assistants
@@ -111,7 +111,7 @@ apis:
   - type: SourceCode
     url: https://github.com/kumo-ai/kumo-rfm-mcp
   - type: MCPServer
-    url: ../mcp/kumoai-mcp.yml
+    url: mcp/kumoai-mcp.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
