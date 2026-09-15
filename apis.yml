@@ -1,14 +1,13 @@
 aid: kumoai
 name: Kumo.AI
-description: 'Kumo.AI builds predictive AI for relational data. Its flagship model,
-  KumoRFM, is a pre-trained Relational Foundation Model that generates training-free
-  predictions over multi-table data by interpreting a data warehouse as a temporal
-  heterogeneous graph, queried through a SQL-like Predictive Query Language (PQL).
-  Kumo exposes this through a Python SDK (kumoai), a REST API for automating retraining
-  and batch predictions, an open-source Model Context Protocol server (kumo-rfm-mcp)
-  for agentic workflows, and a published Agent Skills catalog. It ships as SaaS, VPC/BYOC,
-  a Snowflake Native Application, and a Databricks Native Application. Kumo product
-  documentation is now hosted by NVIDIA under Structured Data and Graph Models.'
+description: Kumo.AI builds predictive AI for relational data. Its flagship model, KumoRFM, is a pre-trained
+  Relational Foundation Model that generates training-free predictions over multi-table data by interpreting
+  a data warehouse as a temporal heterogeneous graph, queried through a SQL-like Predictive Query Language
+  (PQL). Kumo exposes this through a Python SDK (kumoai), a REST API for automating retraining and batch
+  predictions, an open-source Model Context Protocol server (kumo-rfm-mcp) for agentic workflows, and
+  a published Agent Skills catalog. It ships as SaaS, VPC/BYOC, a Snowflake Native Application, and a
+  Databricks Native Application. Kumo product documentation is now hosted by NVIDIA under Structured Data
+  and Graph Models.
 url: https://raw.githubusercontent.com/api-evangelist/kumoai/refs/heads/main/apis.yml
 deliveryModel:
   model: open-core
@@ -35,7 +34,10 @@ accessModel:
   - authentication
   - rate-limits
   - security
-  - {url: 'https://kumo.ai', status: 301, note: 'declared website redirects to https://docs.nvidia.com/sdgm/rfm/overview — a different registrable domain (kumo.ai -> nvidia.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  - url: https://kumo.ai
+    status: 301
+    note: declared website redirects to https://docs.nvidia.com/sdgm/rfm/overview — a different registrable
+      domain (kumo.ai -> nvidia.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)
   generated: '2026-09-03'
   method: derived
 image: https://avatars.githubusercontent.com/u/83320328?v=4
@@ -71,12 +73,12 @@ tags_raw:
 - Agents
 - Relational Data
 apis:
-- aid: kumoai-rest-api
+- aid: kumoai:kumoai-rest-api
   name: Kumo REST API
-  description: Automate and schedule predictive query training and batch predictions.
-    Retrain a predictive query (re-ingesting data from the source), trigger recurring
-    batch predictions, monitor job status and evaluation metrics, and cancel in-progress
-    jobs. Authenticates with a tenant-scoped X-API-Key header.
+  description: Automate and schedule predictive query training and batch predictions. Retrain a predictive
+    query (re-ingesting data from the source), trigger recurring batch predictions, monitor job status
+    and evaluation metrics, and cancel in-progress jobs. Authenticates with a tenant-scoped X-API-Key
+    header.
   humanURL: https://docs.nvidia.com/sdgm/rest-api
   baseURL: https://<customer_id>.kumoai.cloud/api
   x-baseURL-note: The public API URL is tenant-scoped; SPCS deployments use https://<kumo_spcs_deployment_url>/api.
@@ -93,13 +95,12 @@ apis:
     url: https://docs.nvidia.com/sdgm/rest-api
   - type: Authentication
     url: authentication/kumoai-authentication.yml
-- aid: kumoai-rfm-mcp
+- aid: kumoai:kumoai-rfm-mcp
   name: KumoRFM MCP Server
-  description: Open-source Model Context Protocol server that empowers AI assistants
-    with KumoRFM. Builds, manages, and visualizes relational graphs directly from CSV
-    or Parquet files, converts natural language into PQL queries, and runs training-free
-    predictions, evaluations, and explanations. Runs over stdio or streamable-http
-    and is distributed on PyPI and as an MCPB bundle.
+  description: Open-source Model Context Protocol server that empowers AI assistants with KumoRFM. Builds,
+    manages, and visualizes relational graphs directly from CSV or Parquet files, converts natural language
+    into PQL queries, and runs training-free predictions, evaluations, and explanations. Runs over stdio
+    or streamable-http and is distributed on PyPI and as an MCPB bundle.
   humanURL: https://github.com/kumo-ai/kumo-rfm-mcp
   baseURL: https://kumorfm.ai
   tags:
