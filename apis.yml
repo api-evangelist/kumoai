@@ -50,10 +50,13 @@ x-tier-reason: enrichment-pipeline
 specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-19'
+x-docs-platform: swagger-ui
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
 tags:
 - Company
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - Predictive Analytics
 - Graph Neural Networks
 - Foundation Models
@@ -72,6 +75,7 @@ tags_raw:
 - Model Context Protocol
 - Agents
 - Relational Data
+- Machine-Learning
 apis:
 - aid: kumoai:kumoai-rest-api
   name: Kumo REST API
@@ -83,13 +87,14 @@ apis:
   baseURL: https://<customer_id>.kumoai.cloud/api
   x-baseURL-note: The public API URL is tenant-scoped; SPCS deployments use https://<kumo_spcs_deployment_url>/api.
   tags:
-  - Machine-Learning
+  - Machine Learning
   - Batch Prediction
   - Job
   tags_raw:
   - Machine Learning
   - Batch Prediction
   - Jobs
+  - Machine-Learning
   properties:
   - type: Documentation
     url: https://docs.nvidia.com/sdgm/rest-api
