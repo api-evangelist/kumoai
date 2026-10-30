@@ -64,14 +64,108 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Kumo.AI builds predictive AI for relational data. Its flagship model, KumoRFM, is a pre-trained Relational Foundation Model that generates training-free predictions over multi-table data by interpreting a data warehouse as a temporal heterogeneous graph, queried through a SQL-like Predictive Query Language (PQL).
+Kumo.AI builds predictive AI for relational data. Its flagship model, KumoRFM, is a pre-trained Relational Foundation Model that generates training-free predictions over multi-table data by interpreting a data warehouse as a temporal heterogeneous graph, queried through a SQL-like Predictive Query Language (PQL). Kumo exposes this through a Python SDK (kumoai), a REST API for automating retraining and batch predictions, an open-source Model Context Protocol server (kumo-rfm-mcp) for agentic workflows, and a published Agent Skills catalog. It ships as SaaS, VPC/BYOC, a Snowflake Native Application, and a Databricks Native Application. Kumo product documentation is now hosted by NVIDIA under Structured Data and Graph Models.
 
-Kumo exposes this through a Python SDK (`kumoai`), a REST API for automating retraining and batch predictions, an open-source Model Context Protocol server (`kumo-rfm-mcp`), and a published Agent Skills catalog. It ships as SaaS, VPC/BYOC, a Snowflake Native Application, and a Databricks Native Application.
+**Areas:** Company · Artificial Intelligence · Machine Learning · Predictive Analytics · Graph Neural Networks · Foundation Models · Data Warehouse · MCP · Agents · Relational Data
 
-- Website: https://kumo.ai
-- Documentation: https://docs.nvidia.com/sdgm/rfm/overview
-- REST API: https://docs.nvidia.com/sdgm/rest-api
-- GitHub: https://github.com/kumo-ai
-- KumoRFM / API keys: https://kumorfm.ai
+## Kumo.AI on APIs.io
 
-Backed by: sv-angel
+Everything profiled for Kumo.AI is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/kumoai/](https://apis.io/providers/kumoai/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Kumo REST API](https://apis.io/apis/kumoai/kumoai-rest-api/) — Automate and schedule predictive query training and batch predictions. Retrain a predictive query (re-ingesting data from the source), trigger recurring…
+- [KumoRFM MCP Server](https://apis.io/apis/kumoai/kumoai-rfm-mcp/) — Open-source Model Context Protocol server that empowers AI assistants with KumoRFM. Builds, manages, and visualizes relational graphs directly from CSV or…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [kumoai-mcp.yml](https://apis.io/servers/kumoai/kumoai-mcp-yml/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Kumoai Authentication](https://apis.io/security/kumoai/kumoai-authentication/)
+- [Kumoai Domain Security](https://apis.io/security/kumoai/kumoai-domain-security/)
+- [Kumoai Trust Center](https://apis.io/security/kumoai/kumoai-trust-center/)
+- [Kumoai Vulnerability Disclosure](https://apis.io/security/kumoai/kumoai-vulnerability-disclosure/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Kumoai Rate Limits](https://apis.io/rate-limits/kumoai/kumoai-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://kumo.ai)
+- [Documentation](https://docs.nvidia.com/sdgm/rfm/introduction)
+- [Getting started](https://docs.nvidia.com/sdgm/quick-start/rfm)
+- [API reference](https://docs.nvidia.com/sdgm/rest-api)
+- [Sign up](https://kumorfm.ai)
+- [Support](https://join.slack.com/t/kumoaibuilders/shared_invite/zt-2z9uih3lf-fPM1z2ACZg~oS3ObmiQLKQ)
+- [Security](https://docs.nvidia.com/sdgm/security-and-governance)
+- [Compliance](https://docs.nvidia.com/sdgm/security-and-governance)
+- [Privacy policy](https://docs.nvidia.com/sdgm/privacy-policy)
+- [GitHub](https://github.com/kumo-ai)
+
+## API Evangelist rating
+
+**Kin Score 37.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 60.5 |
+| Developer ergonomics | 69.0 |
+| Access clarity | 26.3 |
+
+**Agent readiness 11.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.1** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/kumoai/](https://apis.io/providers/kumoai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Kumo.AI: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/kumoai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
